@@ -1,0 +1,102 @@
+.checkout {
+  width: clamp(220px, 80%, 500px);
+  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  background-color: #0f52ba;
+  box-shadow: -5px 0px 6px 0px #00000021;
+  display: flex;
+  flex-direction: column;
+  // transition: transform 1s ease-in-out;
+
+  align-items: center;
+  gap: 20px;
+
+  // &.open {
+  // }
+
+  &.close {
+    display: none;
+  }
+
+  > .checkout-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px;
+
+    > .close-button {
+      all: unset;
+      color: white;
+      text-align: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: black;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    > .title {
+      font-size: 27px;
+      color: white;
+      font-weight: 700;
+      width: 180px;
+    }
+  }
+
+  > .items {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    // justify-content: center;
+    flex-direction: column;
+    min-height: calc(100vh - 380px);
+    overflow-y: auto;
+    padding: 30px 0px; //precisa terminar o css da sidebar e fazer os testes, corrigir problema do scroll na sidebar e a animação
+    width: clamp(350px, 100%, 450px);
+  }
+
+  > .checkout-bottom {
+    width: 100%;
+    > .total-price {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      align-items: center;
+      font-size: 700;
+      height: 97px;
+      color: white;
+      font-size: 700;
+      font-weight: bold;
+      font-size: 28px;
+    }
+
+    > .confirm {
+      all: unset;
+      text-align: center;
+      align-self: flex-end;
+      justify-self: end;
+
+      width: 100%;
+      background-color: black;
+      height: 97px;
+      color: white;
+      font-size: 700;
+      font-weight: bold;
+      font-size: 28px;
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(27, 27, 27);
+      }
+    }
+  }
+}

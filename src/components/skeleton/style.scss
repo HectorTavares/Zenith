@@ -1,0 +1,53 @@
+.card-skeleton {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  width: clamp(220px, 70%, 320px);
+  height: 400px;
+}
+
+.image-skeleton {
+  height: 200px; /* Ajuste conforme necessário */
+  width: 100%;
+  background-color: #d1d1d1;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+.text-container {
+  display: flex;
+  gap: 20px;
+}
+
+.text-skeleton {
+  height: 20px;
+  width: 50%; /* Ajuste conforme necessário */
+  background-color: #d1d1d1;
+  margin-bottom: 8px;
+  animation: pulse 1.5s infinite alternate;
+  border-radius: 4px;
+}
+.button-skeleton {
+  background-color: #d1d1d1;
+  animation: pulse 1.5s infinite alternate;
+  border-radius: 4px;
+  height: 30px;
+}
+
+.full {
+  width: 100%;
+  height: 80px;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}

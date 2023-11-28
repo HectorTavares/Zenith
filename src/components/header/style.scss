@@ -1,0 +1,41 @@
+.header {
+  //   max-height: 100px;
+  flex: 1;
+  height: 100px;
+  width: 100vw;
+  background-color: #0f52ba;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px 10px 50px;
+  > .logo {
+    display: flex;
+    align-items: baseline;
+    padding-top: 20px;
+    color: white;
+    gap: 5px;
+    h1 {
+      font-weight: 600;
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+
+  > .cart {
+    all: unset;
+    background-color: rgb(255, 255, 255);
+    width: 90px;
+    height: 45px;
+    border-radius: 8px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
