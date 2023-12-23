@@ -1,5 +1,9 @@
-export { productReducer } from "./product/product-slice";
-export { useGetProductsQuery } from "./product/product-slice";
+export { productApiReducer, productReducer } from "./product/product-slice";
+export {
+  useGetProductsQuery,
+  useGetProductByIdQuery,
+  setProducts,
+} from "./product/product-slice";
 
 export { cartReducer } from "./cart/cart-slice";
 export {

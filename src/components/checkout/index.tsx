@@ -1,8 +1,10 @@
+"use client";
 import "./style.scss";
 import { CartItem } from "@/types";
 import { CartCard } from "../cartCard";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { closeSidebar } from "@/reducers";
+import { ReduxStoreProvider } from "@/providers/reduxStoreProvider";
 
 export const Checkout = ({}) => {
   const cartItens = useAppSelector((state) => state.cart);
@@ -34,12 +36,12 @@ export const Checkout = ({}) => {
       </div>
       <div className="checkout-bottom">
         <div className="total-price">
-          <p>Total:</p> <p>R${getAllPrices()}</p>
+          <p>Total:</p> <p>R${getAllPrices().toFixed(2)}</p>
         </div>
-        <button className="confirm">Finalizar Compra</button>
+        <button onClick={() => window.alert("Comprou")} className="confirm">
+          Finalizar Compra
+        </button>
       </div>
     </aside>
-    /* </motion.aside>
-     </AnimatePresence> */
   );
 };

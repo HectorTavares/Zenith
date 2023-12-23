@@ -6,6 +6,7 @@
   box-shadow: 0px 2px 8px 0px #00000022;
   border-radius: 20px;
   background-color: white;
+  padding-top: 15px;
 
   &:hover {
     cursor: pointer;
@@ -14,9 +15,11 @@
   }
 
   > .card-image {
-    height: 220px;
-    width: 220px;
     margin: auto;
+    max-width: 95%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
   }
 
   > .content {
@@ -40,13 +43,21 @@
       }
 
       > .title {
-        text-overflow: ellipsis;
-        overflow: hidden;
+        overflow: hidden; // Removendo barra de rolagem
+        text-overflow: ellipsis; // Adicionando "..." ao final
+        display: -webkit-box;
+        -webkit-line-clamp: 2; // Quantidade de linhas
+        -webkit-box-orient: vertical;
       }
     }
 
     > .description {
       word-break: break-word;
+      overflow: hidden; // Removendo barra de rolagem
+      text-overflow: ellipsis; // Adicionando "..." ao final
+      display: -webkit-box;
+      -webkit-line-clamp: 4; // Quantidade de linhas
+      -webkit-box-orient: vertical;
     }
   }
 

@@ -1,0 +1,24 @@
+.slick-list {
+  width: calc(50vw - 50px);
+  .carousel-image {
+    margin: auto;
+    max-width: 95%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+  }
+}
+
+.slick-next {
+  //   right: 10px;
+  &:before {
+    color: black;
+  }
+}
+
+.slick-prev {
+  //   left: 10px;
+  &:before {
+    color: black;
+  }
+}

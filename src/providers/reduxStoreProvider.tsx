@@ -1,13 +1,19 @@
 "use client";
-import { Provider, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 
 import { configureStore } from "@reduxjs/toolkit";
-import { productReducer, cartReducer, sidebarReducer } from "@/reducers";
+import {
+  productApiReducer,
+  productReducer,
+  cartReducer,
+  sidebarReducer,
+} from "@/reducers";
 import { productApi } from "./../reducers/product/product-slice";
 
 export const store = configureStore({
   reducer: {
-    [productApi.reducerPath]: productReducer,
+    [productApi.reducerPath]: productApiReducer,
+    product: productReducer,
     cart: cartReducer,
     sidebar: sidebarReducer,
   },

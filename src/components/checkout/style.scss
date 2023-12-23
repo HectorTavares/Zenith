@@ -1,5 +1,5 @@
 .checkout {
-  width: clamp(220px, 80%, 500px);
+  width: clamp(220px, 100%, 500px);
   height: 100vh;
   max-height: 100vh;
   min-height: 100vh;
@@ -61,8 +61,25 @@
     flex-direction: column;
     min-height: calc(100vh - 380px);
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 30px 0px; //precisa terminar o css da sidebar e fazer os testes, corrigir problema do scroll na sidebar e a animação
-    width: clamp(350px, 100%, 450px);
+    // width: clamp(350px, 100%, 450px);
+
+    &::-webkit-scrollbar-track {
+      background: #0f52ba;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: silver;
+      border-left: 7px solid #0f52ba;
+      &:hover {
+        background-color: rgba(151, 151, 151, 0.863);
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 11px;
+    }
   }
 
   > .checkout-bottom {

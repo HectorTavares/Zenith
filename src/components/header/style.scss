@@ -8,6 +8,8 @@
   justify-content: space-between;
   padding: 10px 50px 10px 50px;
   > .logo {
+    all: unset;
+    cursor: pointer;
     display: flex;
     align-items: baseline;
     padding-top: 20px;

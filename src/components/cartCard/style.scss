@@ -1,7 +1,7 @@
 .cartCard {
   display: flex;
-  width: 385px;
-  height: 101px;
+  width: clamp(285px, 90%, 385px);
+  min-height: 100px;
   background-color: white;
   border-radius: 10px;
   align-items: center;
@@ -10,7 +10,7 @@
   position: relative;
 
   .cartCard-image {
-    max-height: 70px;
+    max-height: 90px;
     max-width: 60px;
     width: auto;
 
@@ -21,6 +21,12 @@
   .name {
     flex: 1;
     font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 1rem;
   }
 
   .quantity-button-container {

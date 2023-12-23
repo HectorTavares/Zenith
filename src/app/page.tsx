@@ -5,9 +5,21 @@ import { Header, Footer, ProductCard, Checkout } from "@/components";
 import { Product } from "@/types";
 import CardSkeleton from "@/components/skeleton";
 import { useGetProductsQuery } from "@/reducers";
+import { useAppDispatch } from "@/hooks";
+import { useEffect } from "react";
+import { setProducts } from "@/reducers";
 
 export default function Home() {
-  const { data: products, error, isLoading } = useGetProductsQuery({});
+  const { data, error, isLoading } = useGetProductsQuery({});
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (data) {
+      // Dispatch da ação para atualizar os dados na store
+      dispatch(setProducts(data));
+    }
+  }, [data, dispatch]);
 
   return (
     <main className="home">
@@ -28,13 +40,9 @@ export default function Home() {
               <CardSkeleton />
               <CardSkeleton />
               <CardSkeleton />
-              <CardSkeleton />
-              <CardSkeleton />
-              <CardSkeleton />
-              <CardSkeleton />
             </>
           ) : null}
-          {products?.map((product: Product) => (
+          {data?.map((product: Product) => (
             <ProductCard product={product} key={product.id} />
           ))}
         </div>

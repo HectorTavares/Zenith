@@ -1,14 +1,15 @@
 export interface Product {
   id: number;
   title: string;
-  price: number;
   description: string;
+  price: number;
+  discountPercentage: number;
+  rating: number;
+  stock: number;
+  brand: string;
   category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
+  thumbnail: string;
+  images: string[];
 }
 
 export interface CartItem {
@@ -16,5 +17,5 @@ export interface CartItem {
   title: string;
   price: number;
   quantity: number;
-  image: string;
+  thumbnail: string;
 }

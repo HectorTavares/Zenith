@@ -8,13 +8,20 @@ import {
 } from "@/reducers/cart/cart-slice";
 
 import { useAppDispatch } from "@/hooks";
+import Image from "next/image";
 
 export const CartCard = ({ cartItem }: { cartItem: CartItem }) => {
   const dispatch = useAppDispatch();
 
   return (
     <div className="cartCard" key={cartItem.id}>
-      <img className="cartCard-image" src={cartItem.image} alt="" />
+      <Image
+        width={200}
+        height={150}
+        className="cartCard-image"
+        src={cartItem.thumbnail}
+        alt=""
+      />
       <h2 className="name">{cartItem.title}</h2>
 
       <div className="quantity-button-container">
@@ -36,7 +43,9 @@ export const CartCard = ({ cartItem }: { cartItem: CartItem }) => {
         </div>
       </div>
 
-      <p className="price">R$ {cartItem.quantity * Number(cartItem.price)}</p>
+      <p className="price">
+        R$ {(cartItem.quantity * cartItem.price).toFixed(2)}
+      </p>
 
       <button
         onClick={() => dispatch(removeItem(cartItem))}
